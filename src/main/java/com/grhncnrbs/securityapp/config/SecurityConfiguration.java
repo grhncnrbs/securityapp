@@ -50,7 +50,10 @@ public class SecurityConfiguration {
                 .csrf(csrf -> csrf.disable()).authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/index").permitAll()
                 .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults());
+                .formLogin(form -> form.loginPage("/signin")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/about")
+                        .permitAll());
         return http.build();
     }
 }

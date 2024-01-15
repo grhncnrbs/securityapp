@@ -14,6 +14,11 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/signin")
+    public String signin() {
+        return "login";
+    }
+
     @RequestMapping("/profile")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String profile() {
@@ -25,4 +30,5 @@ public class HomeController {
     public String about() {
         return "about";
     }
+
 }

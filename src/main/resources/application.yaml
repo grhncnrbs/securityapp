@@ -1,1 +1,21 @@
+spring:
+  security:
+    user:
+      name: test1
+      password: 123
 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/DemoDb
+    username: postgres
+    password: 4412199.Gmc
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 8081
+#  servlet:
+#    context-path:
